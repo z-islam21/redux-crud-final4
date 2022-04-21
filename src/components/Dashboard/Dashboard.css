@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    padding: 5px;
+    color: white;
+    background-color: rgba(56, 41, 68, 0.979);
+}
+input{
+    width: 100%;
+    border-radius: 4px;
+}
+.dashboard-container{
+    margin-top:30px;
+    padding: 20px;
+}
+.row{
+    margin-top: 18px;
+}
+.left-col{
+    padding: 10px;
+}
+.right-col{
+    border-left: 1px solid rgba(0, 0, 0, 0.396);
+}
+.td-action{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.action-btn{
+    margin:2px;
+}

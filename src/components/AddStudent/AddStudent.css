@@ -1,0 +1,7 @@
+.form-btn{
+    display: flex;
+}
+.fname{
+    margin-top:3px;
+    border: 1px solid red;
+}
