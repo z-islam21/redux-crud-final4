@@ -4,15 +4,23 @@ import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import AddStudent from "../AddStudent/AddStudent";
 import { fetchStudent } from "../../actions/studentAction/studentAction";
 import { connect } from "react-redux";
-import { getAllStudents } from "../../actions/studentAction/studentAction";
+// import { getAllStudents } from "../../actions/studentAction/studentAction";
 
 class Dashboard extends React.Component {
+  // constructor(props) {
+  //   super(props){
+  //     this.state = {
+  //       students: this.props.students
+  //     }
+  //   }
+  // }
   componentDidMount() {
     this.props.dispatch(fetchStudent());
   }
 
   render() {
     const { students = [] } = this.props;
+    console.log(this.props);
     console.log("students", students.length);
     return (
       <div>
@@ -73,7 +81,7 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("state", state);
+  console.log("state-from-dashboard", state);
   return {
     students: state.students.students,
   };

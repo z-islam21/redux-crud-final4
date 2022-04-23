@@ -100,16 +100,18 @@ class AddStudent extends Component {
             />
           </div>
 
-          <Button type="submit" variant="success">
-            Submit
-          </Button>
-          <Button
-            onClick={this.handleResetButton}
-            variant="warning"
-            style={{ marginLeft: "5px" }}
-          >
-            Reset
-          </Button>
+          <div className="form-btn">
+            <Button type="submit" variant="success">
+              Submit
+            </Button>
+            <Button
+              onClick={this.handleResetButton}
+              variant="warning"
+              style={{ marginLeft: "5px" }}
+            >
+              Reset
+            </Button>
+          </div>
         </form>
       </div>
     );

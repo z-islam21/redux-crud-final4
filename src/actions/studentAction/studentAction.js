@@ -30,17 +30,17 @@ export const getAllStudentsRequest = () => ({
   },
 });
 
-export const getAllStudentsSuccess = (data) => ({
-  type: types.GET_ALL_STUDENTS_SUCCESS,
-  payload: data,
-});
+// export const getAllStudentsSuccess = (data) => ({
+//   type: types.GET_ALL_STUDENTS_SUCCESS,
+//   payload: data,
+// });
 
-export const getAllStudentsFailure = (error) => ({
-  type: types.GET_ALL_STUDENTS_FAILURE,
-  payload: {
-    error: error,
-  },
-});
+// export const getAllStudentsFailure = (error) => ({
+//   type: types.GET_ALL_STUDENTS_FAILURE,
+//   payload: {
+//     error: error,
+//   },
+// });
 
 // MAIN Action to create
 export const createStudent = (data) => async (dispatch) => {
@@ -61,13 +61,13 @@ export const createStudent = (data) => async (dispatch) => {
 };
 
 // MAIN Action to fetch
-export const fetchStudent = (data) => async (dispatch) => {
+export const fetchStudent = () => async (dispatch) => {
   try {
     dispatch(getAllStudentsRequest());
     // console.log(urlStuffs.getStudentsURL);
 
     const { data } = await axios.get(urlStuffs.getStudentsURL);
-    console.log(data);
+    console.log("data-from-Action=>", data);
 
     dispatch({
       type: types.GET_ALL_STUDENTS_SUCCESS,
@@ -75,6 +75,11 @@ export const fetchStudent = (data) => async (dispatch) => {
     });
   } catch (error) {
     console.log(error);
-    dispatch(getAllStudentsFailure(error.message));
+    dispatch({
+      type: types.GET_ALL_STUDENTS_FAILURE,
+      payload: {
+        error: error,
+      },
+    })
   }
 };
